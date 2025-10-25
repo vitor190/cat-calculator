@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://bgbfej305hdie"]
 
 [ext_resource type="Script" uid="uid://dgkmcbqo4dai5" path="res://Cenas/title_screen.gd" id="1_147ya"]
-[ext_resource type="Texture2D" uid="uid://c51iifwy6x7qd" path="res://assets e sprites/Background/201da0ef717ed278eca911645dc3e0b2.jpg" id="1_rg7y1"]
 [ext_resource type="Texture2D" uid="uid://cm2gbls4g1f8l" path="res://assets e sprites/Background/2ed91d36-f834-47d9-a09b-7450f58c7a26.png" id="2_in1uv"]
+[ext_resource type="Texture2D" uid="uid://bqillb63onudn" path="res://assets e sprites/Background/cartoon-forest-background-1920-x-1080-hksjkpouzcqpo91f.jpg" id="2_jtjwa"]
 [ext_resource type="Texture2D" uid="uid://b2hhsc1ug4rfi" path="res://assets e sprites/Background/a5e46252-561d-4c17-83a6-712fb656d589.png" id="2_rg7y1"]
 [ext_resource type="Theme" uid="uid://uefvu7jihsl7" path="res://Resources/CollisionShapes/title_screen.tres" id="3_848dy"]
 [ext_resource type="AudioStream" uid="uid://cfrmqix6pt07k" path="res://assets e sprites/song/kids-game-gaming-background-music-295075.mp3" id="6_jtjwa"]
@@ -107,7 +107,7 @@ script = ExtResource("1_147ya")
 layout_mode = 2
 offset_right = 1152.0
 offset_bottom = 648.0
-texture = ExtResource("1_rg7y1")
+texture = ExtResource("2_jtjwa")
 expand_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -115,8 +115,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -610.0
-offset_right = -610.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_top = 20
@@ -125,7 +123,7 @@ theme_override_constants/margin_bottom = 20
 [node name="musica_de_fundo" type="AudioStreamPlayer2D" parent="MarginContainer"]
 position = Vector2(610, 0)
 stream = ExtResource("6_jtjwa")
-volume_db = -3.768
+volume_db = -25.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2

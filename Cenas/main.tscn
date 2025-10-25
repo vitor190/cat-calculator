@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://c6k1amblo5q7n"]
+[gd_scene load_steps=12 format=3 uid="uid://c6k1amblo5q7n"]
 
+[ext_resource type="Script" uid="uid://bddcsacujm2cb" path="res://Cenas/main.gd" id="1_qns0q"]
 [ext_resource type="Texture2D" uid="uid://brawm65irfy0j" path="res://assets e sprites/Assets/Tiles.png" id="1_x3hk2"]
 [ext_resource type="PackedScene" uid="uid://brlj57rs7ej7r" path="res://Cenas/player.tscn" id="2_74bqr"]
 [ext_resource type="Texture2D" uid="uid://bo2ywv7ebjmi5" path="res://assets e sprites/Assets/Props-Rocks.png" id="2_lb8y5"]
+[ext_resource type="AudioStream" uid="uid://c7s6xeqx1dhu7" path="res://assets e sprites/song/magic-forest-318165.mp3" id="2_n00j1"]
 [ext_resource type="Texture2D" uid="uid://cpnm6x1pi4ip4" path="res://assets e sprites/Trees/Green-Tree.png" id="3_ruij7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lb8y5"]
@@ -3860,6 +3862,11 @@ physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_74bqr")
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_qns0q")
+
+[node name="musica_fase1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_n00j1")
+volume_db = -19.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
