@@ -14,6 +14,9 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var jump_velocity = -360.0
 @export_group("")
 
+func _ready():
+	$Camera2D.enabled = true
+
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
