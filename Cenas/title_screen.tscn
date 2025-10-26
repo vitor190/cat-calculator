@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://dgkmcbqo4dai5" path="res://Cenas/title_screen.gd" id="1_147ya"]
 [ext_resource type="Texture2D" uid="uid://cm2gbls4g1f8l" path="res://assets e sprites/Background/2ed91d36-f834-47d9-a09b-7450f58c7a26.png" id="2_in1uv"]
 [ext_resource type="Texture2D" uid="uid://bqillb63onudn" path="res://assets e sprites/Background/cartoon-forest-background-1920-x-1080-hksjkpouzcqpo91f.jpg" id="2_jtjwa"]
-[ext_resource type="Texture2D" uid="uid://b2hhsc1ug4rfi" path="res://assets e sprites/Background/a5e46252-561d-4c17-83a6-712fb656d589.png" id="2_rg7y1"]
 [ext_resource type="Theme" uid="uid://uefvu7jihsl7" path="res://Resources/CollisionShapes/title_screen.tres" id="3_848dy"]
 [ext_resource type="AudioStream" uid="uid://cfrmqix6pt07k" path="res://assets e sprites/song/kids-game-gaming-background-music-295075.mp3" id="6_jtjwa"]
+[ext_resource type="Texture2D" uid="uid://bkcjipq4anrb" path="res://assets e sprites/Background/e922fa31-fd26-456e-8a45-1730f5ece87c.png" id="6_l05ng"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_147ya"]
 
@@ -168,7 +168,7 @@ text = "SAIR DO JOGO"
 [node name="cat" type="TextureRect" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
-texture = ExtResource("2_rg7y1")
+texture = ExtResource("6_l05ng")
 expand_mode = 2
 
 [node name="anim" type="AnimationPlayer" parent="."]

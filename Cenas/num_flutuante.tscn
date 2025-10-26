@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://ebgtn3862m6y"]
+
+[ext_resource type="FontFile" uid="uid://bysfhkg8b4c10" path="res://assets e sprites/fonts/Pixellari.ttf" id="1_dte7g"]
+[ext_resource type="Script" uid="uid://biotlvj6xrefn" path="res://Cenas/num_flutuante.gd" id="1_wi80w"]
+[ext_resource type="Theme" uid="uid://x1xvj6f5vent" path="res://Resources/CollisionShapes/num_flutuante.tres" id="2_21b3h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wi80w"]
+radius = 12.0
+
+[sub_resource type="Animation" id="Animation_21b3h"]
+resource_name = "flutua"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -10), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nv4y0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d7s3o"]
+_data = {
+&"RESET": SubResource("Animation_nv4y0"),
+&"flutua": SubResource("Animation_21b3h")
+}
+
+[node name="num_flutuante" type="Area2D"]
+collision_layer = 16
+script = ExtResource("1_wi80w")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -19.0
+offset_top = -11.0
+offset_right = 19.0
+offset_bottom = 15.0
+theme = ExtResource("2_21b3h")
+theme_override_fonts/font = ExtResource("1_dte7g")
+theme_override_font_sizes/font_size = 25
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wi80w")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_d7s3o")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
