@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://y88akcfdq6a5"
+path="res://.godot/imported/level-win-6416.mp3-ef0d420a4e76a9c434e9e5811d1a92b0.mp3str"
+
+[deps]
+
+source_file="res://assets e sprites/song/level-win-6416.mp3"
+dest_files=["res://.godot/imported/level-win-6416.mp3-ef0d420a4e76a9c434e9e5811d1a92b0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

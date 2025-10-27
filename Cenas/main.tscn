@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://c6k1amblo5q7n"]
+[gd_scene load_steps=49 format=3 uid="uid://c6k1amblo5q7n"]
 
 [ext_resource type="Script" uid="uid://bddcsacujm2cb" path="res://Cenas/main.gd" id="1_qns0q"]
 [ext_resource type="Texture2D" uid="uid://brawm65irfy0j" path="res://assets e sprites/Assets/Tiles.png" id="1_x3hk2"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c31o5scgypbva" path="res://assets e sprites/Assets/Tree-Assets.png" id="7_n00j1"]
 [ext_resource type="Texture2D" uid="uid://ccgvrmdghtsme" path="res://assets e sprites/Assets/Buildings.png" id="9_btbr3"]
 [ext_resource type="Texture2D" uid="uid://d0xwvth1ftdrb" path="res://assets e sprites/Background/5eb86ae5-aeab-4930-b438-770ca8c93c7a.png" id="10_me8gh"]
+[ext_resource type="Script" uid="uid://dygj6wnaf0gm4" path="res://Cenas/portao.gd" id="10_neu2f"]
 [ext_resource type="Texture2D" uid="uid://bvyhbctvmaffm" path="res://assets e sprites/Background/db1395f2-6ced-4dbf-9bed-70cb8558ebfe.png" id="11_330ga"]
 [ext_resource type="Texture2D" uid="uid://4onrlt3bhgx" path="res://assets e sprites/Background/4b071474-9926-4ed0-91e9-baa1b5047712.png" id="12_3ea3k"]
 [ext_resource type="Texture2D" uid="uid://qkb6s0xyq0mk" path="res://assets e sprites/Background/596f7501-e2d7-4535-baf5-0896855f7ad1.png" id="13_xaxpv"]
@@ -17,6 +18,9 @@
 [ext_resource type="Script" uid="uid://rtardkdtmy4k" path="res://Cenas/quiz_manager.gd" id="15_3ea3k"]
 [ext_resource type="Theme" uid="uid://x1xvj6f5vent" path="res://Resources/CollisionShapes/num_flutuante.tres" id="15_xaxpv"]
 [ext_resource type="Theme" uid="uid://b417y5ogbesqn" path="res://Resources/CollisionShapes/bubble.tres" id="16_ir430"]
+[ext_resource type="AudioStream" uid="uid://dbhb2cjraf8he" path="res://assets e sprites/song/sample_confirm_success02_kofi_by_miraclei-360154.mp3" id="18_erht2"]
+[ext_resource type="AudioStream" uid="uid://hr28gfhk7ujv" path="res://assets e sprites/song/sound-effect-system-error-sound-117733.mp3" id="19_vi8pf"]
+[ext_resource type="AudioStream" uid="uid://y88akcfdq6a5" path="res://assets e sprites/song/level-win-6416.mp3" id="20_vi8pf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lb8y5"]
 texture = ExtResource("3_ruij7")
@@ -6429,6 +6433,14 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("10_me8gh")
+}],
+"loop": false,
+"name": &"portao",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_me8gh")
 }, {
 "duration": 1.0,
 "texture": ExtResource("11_330ga")
@@ -6440,16 +6452,8 @@ animations = [{
 "texture": ExtResource("13_xaxpv")
 }],
 "loop": false,
-"name": &"portao",
-"speed": 1.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("13_xaxpv")
-}],
-"loop": true,
 "name": &"portao aberto",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_me8gh"]
@@ -6462,6 +6466,7 @@ script = ExtResource("1_qns0q")
 [node name="musica_fase1" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_n00j1")
 volume_db = -10.71
+parameters/looping = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -6570,12 +6575,15 @@ format = 2
 layer_0/tile_data = PackedInt32Array(-130930, 1179648, 15, -65394, 1179648, 16, -196465, 1245184, 14, -130929, 1245184, 15, -65393, 1245184, 16, 143, 1245184, 17, -196464, 1310720, 14, -130928, 1310720, 15, -65392, 1310720, 16, 144, 1310720, 17, -261999, 1376256, 13, -196463, 1376256, 14, -130927, 1376256, 15, -65391, 1376256, 16, 145, 1376256, 17, 65681, 1376256, 18, 131217, 1376256, 19, 196753, 1376256, 20, -261998, 1441792, 13, -196462, 1441792, 14, -130926, 1441792, 15, -65390, 1441792, 16, 146, 1441792, 17, 65682, 1441792, 18, 131218, 1441792, 19, 196754, 1441792, 20, -327533, 1441792, 13, -261997, 1441792, 14, -196461, 1507328, 14, -130925, 1507328, 15, -65389, 1507328, 16, 147, 1507328, 17, 65683, 1507328, 18, 131219, 1507328, 19, 196755, 1507328, 20, -327532, 1441792, 14, -261996, 1572864, 13, -196460, 1572864, 14, -130924, 1572864, 15, -65388, 1572864, 16, 148, 1572864, 17, 65684, 1572864, 18, 131220, 1572864, 19, 196756, 1572864, 20)
 
 [node name="portao" type="Area2D" parent="."]
+z_index = 2
+collision_layer = 8
+script = ExtResource("10_neu2f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="portao"]
 position = Vector2(1909, 10.75)
 scale = Vector2(0.935482, 1.03982)
 sprite_frames = SubResource("SpriteFrames_ir430")
-animation = &"portao"
+animation = &"portao aberto"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="portao"]
 position = Vector2(1910, 24)
@@ -6610,11 +6618,11 @@ valor = 1
 [node name="UI" type="Node2D" parent="."]
 
 [node name="Equacao" type="Label" parent="UI"]
-offset_left = 1620.0
-offset_right = 1771.0
+offset_left = 1621.0
+offset_right = 1772.0
 offset_bottom = 47.0
 theme = ExtResource("15_xaxpv")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 15
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -6641,6 +6649,15 @@ offset_top = -56.0
 offset_right = 1779.0
 offset_bottom = -16.0
 theme = ExtResource("16_ir430")
+
+[node name="SomAcerto" type="AudioStreamPlayer2D" parent="UI"]
+stream = ExtResource("18_erht2")
+
+[node name="SomErro" type="AudioStreamPlayer2D" parent="UI"]
+stream = ExtResource("19_vi8pf")
+
+[node name="SomFaseConcluida" type="AudioStreamPlayer2D" parent="UI"]
+stream = ExtResource("20_vi8pf")
 
 [node name="QuizManager" type="Node" parent="."]
 script = ExtResource("15_3ea3k")

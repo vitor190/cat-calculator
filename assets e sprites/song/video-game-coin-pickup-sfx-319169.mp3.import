@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://xq43qvdbxmbd"
+path="res://.godot/imported/video-game-coin-pickup-sfx-319169.mp3-a58f06f004728af7a0b0d018392b277b.mp3str"
+
+[deps]
+
+source_file="res://assets e sprites/song/video-game-coin-pickup-sfx-319169.mp3"
+dest_files=["res://.godot/imported/video-game-coin-pickup-sfx-319169.mp3-a58f06f004728af7a0b0d018392b277b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

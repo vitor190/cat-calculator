@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://ebgtn3862m6y"]
+[gd_scene load_steps=9 format=3 uid="uid://ebgtn3862m6y"]
 
 [ext_resource type="FontFile" uid="uid://bysfhkg8b4c10" path="res://assets e sprites/fonts/Pixellari.ttf" id="1_dte7g"]
 [ext_resource type="Script" uid="uid://biotlvj6xrefn" path="res://Cenas/num_flutuante.gd" id="1_wi80w"]
 [ext_resource type="Theme" uid="uid://x1xvj6f5vent" path="res://Resources/CollisionShapes/num_flutuante.tres" id="2_21b3h"]
+[ext_resource type="AudioStream" uid="uid://xq43qvdbxmbd" path="res://assets e sprites/song/video-game-coin-pickup-sfx-319169.mp3" id="4_nv4y0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wi80w"]
 radius = 12.0
@@ -68,5 +69,8 @@ shape = SubResource("CircleShape2D_wi80w")
 libraries = {
 &"": SubResource("AnimationLibrary_d7s3o")
 }
+
+[node name="som_coleta" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_nv4y0")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
