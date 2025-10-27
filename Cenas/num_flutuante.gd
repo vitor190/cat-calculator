@@ -9,4 +9,7 @@ func _ready():
 	anim.play("flutua")  
 
 func _on_body_entered(body):
+	if body.name == "player": 
+		print("💡 Número coletado pelo player!")
+		body.coletar_numero(valor)
 	queue_free()

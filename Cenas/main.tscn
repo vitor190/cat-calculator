@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://c6k1amblo5q7n"]
+[gd_scene load_steps=45 format=3 uid="uid://c6k1amblo5q7n"]
 
 [ext_resource type="Script" uid="uid://bddcsacujm2cb" path="res://Cenas/main.gd" id="1_qns0q"]
 [ext_resource type="Texture2D" uid="uid://brawm65irfy0j" path="res://assets e sprites/Assets/Tiles.png" id="1_x3hk2"]
@@ -14,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://4onrlt3bhgx" path="res://assets e sprites/Background/4b071474-9926-4ed0-91e9-baa1b5047712.png" id="12_3ea3k"]
 [ext_resource type="Texture2D" uid="uid://qkb6s0xyq0mk" path="res://assets e sprites/Background/596f7501-e2d7-4535-baf5-0896855f7ad1.png" id="13_xaxpv"]
 [ext_resource type="PackedScene" uid="uid://ebgtn3862m6y" path="res://Cenas/num_flutuante.tscn" id="14_330ga"]
+[ext_resource type="Script" uid="uid://rtardkdtmy4k" path="res://Cenas/quiz_manager.gd" id="15_3ea3k"]
+[ext_resource type="Theme" uid="uid://x1xvj6f5vent" path="res://Resources/CollisionShapes/num_flutuante.tres" id="15_xaxpv"]
+[ext_resource type="Theme" uid="uid://b417y5ogbesqn" path="res://Resources/CollisionShapes/bubble.tres" id="16_ir430"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lb8y5"]
 texture = ExtResource("3_ruij7")
@@ -6603,3 +6606,41 @@ metadata/_edit_group_ = true
 [node name="num_flutuante" parent="numeros_flutuantes/num3" instance=ExtResource("14_330ga")]
 z_index = 4
 valor = 1
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="Equacao" type="Label" parent="UI"]
+offset_left = 1620.0
+offset_right = 1771.0
+offset_bottom = 47.0
+theme = ExtResource("15_xaxpv")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Balao1" type="Button" parent="UI"]
+visible = false
+offset_left = 1617.0
+offset_top = -56.0
+offset_right = 1659.0
+offset_bottom = -16.0
+theme = ExtResource("16_ir430")
+
+[node name="Balao2" type="Button" parent="UI"]
+visible = false
+offset_left = 1678.0
+offset_top = -56.0
+offset_right = 1720.0
+offset_bottom = -16.0
+theme = ExtResource("16_ir430")
+
+[node name="Balao3" type="Button" parent="UI"]
+visible = false
+offset_left = 1738.0
+offset_top = -56.0
+offset_right = 1779.0
+offset_bottom = -16.0
+theme = ExtResource("16_ir430")
+
+[node name="QuizManager" type="Node" parent="."]
+script = ExtResource("15_3ea3k")

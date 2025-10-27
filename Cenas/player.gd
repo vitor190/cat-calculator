@@ -3,6 +3,9 @@ extends CharacterBody2D
 class_name Player
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var numeros_coletados: Array = []
+var total_numeros = 3 
+signal todos_numeros_coletados
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var area_collision_shape_2d = $Area2D/AreaCollisionShape2D
@@ -37,3 +40,11 @@ func _physics_process(delta):
 		animated_sprite_2d.play("cat_idle")
 	if direction != 0:
 		animated_sprite_2d.flip_h = direction > 0
+		
+func coletar_numero(valor: int):
+	numeros_coletados.append(valor)
+	print("✅ Coletou número:", valor, "Total:", numeros_coletados.size())
+	
+	if numeros_coletados.size() == total_numeros:
+		print("Todos os números coletados!")
+		emit_signal("todos_numeros_coletados")
