@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8x4hs4m036lf"]
+
+[ext_resource type="Script" uid="uid://brthap5qg03j0" path="res://Cenas/goal.gd" id="1_lupch"]
+[ext_resource type="Texture2D" uid="uid://dcbv5y3bdx5pd" path="res://assets e sprites/itens/Mini UI/Timer_Coin_Numbers_Drop-shadowed (8 x 8).png" id="1_pp0cq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lupch"]
+radius = 5.0
+
+[sub_resource type="Animation" id="Animation_p4whp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_y52g0"]
+resource_name = "float"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2u7pf"]
+_data = {
+&"RESET": SubResource("Animation_p4whp"),
+&"float": SubResource("Animation_y52g0")
+}
+
+[node name="goal" type="Area2D"]
+collision_layer = 16
+script = ExtResource("1_lupch")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pp0cq")
+region_enabled = true
+region_rect = Rect2(0, 8, 8, 8)
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_lupch")
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_2u7pf")
+}
+autoplay = "float"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
