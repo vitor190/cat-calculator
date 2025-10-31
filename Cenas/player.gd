@@ -17,6 +17,9 @@ signal todos_numeros_coletados
 @export var jump_velocity = -360.0
 @export_group("")
 
+var fase_atual := 1 
+
+
 func _ready():
 	$Camera2D.enabled = true
 
@@ -43,8 +46,16 @@ func _physics_process(delta):
 		
 func coletar_numero(valor: int):
 	numeros_coletados.append(valor)
-	print("✅ Coletou número:", valor, "Total:", numeros_coletados.size())
-	
-	if numeros_coletados.size() == total_numeros:
-		print("Todos os números coletados!")
+	print("✅ Coletou número:", valor, "Total:", numeros_coletados.size(), " | Fase:", fase_atual)
+
+	if fase_atual == 1:
+		# Na fase 1, só emite o sinal quando pegar todos
+		if numeros_coletados.size() == total_numeros:
+			print("🎯 Todos os números coletados (fase 1)!")
+			emit_signal("todos_numeros_coletados")
+	else:
+		# Na fase 2, emite o sinal a cada número coletado
 		emit_signal("todos_numeros_coletados")
+
+		if numeros_coletados.size() == total_numeros:
+			print("🎯 Todos os números coletados (fase 2)!")
