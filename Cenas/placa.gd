@@ -18,7 +18,7 @@ func _ready():
 
 func _on_body_entered(body):
 	print("Entrou em colisão com:", body.name)
-	if body.name == "Player":  # agora identifica só pelo nome
+	if body.name == "Player":
 		player_near = true
 		symbol.visible = true
 

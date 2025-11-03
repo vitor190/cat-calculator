@@ -21,5 +21,3 @@ void fragment() {
 		}
 	}
 }
-
-

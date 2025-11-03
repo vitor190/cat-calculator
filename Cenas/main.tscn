@@ -6531,9 +6531,10 @@ position = Vector2(-151, 46)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(142, -43)
-zoom = Vector2(2.75, 2.75)
+zoom = Vector2(2.2, 2.2)
 limit_left = -220
 limit_right = 2370
+limit_bottom = 128
 editor_draw_limits = true
 
 [node name="tilemaps" type="Node" parent="."]

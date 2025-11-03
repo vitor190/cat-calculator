@@ -10876,7 +10876,7 @@ tile_data = PackedInt32Array(196608, 1179648, 15, 262144, 1179648, 16, 131073, 1
 [sub_resource type="TileMapPattern" id="TileMapPattern_cp20w"]
 tile_data = PackedInt32Array(524288, 1114112, 20, 196609, 1179648, 15, 262145, 1179648, 16, 393217, 1179648, 18, 458753, 1179648, 19, 524289, 1179648, 20, 131074, 1245184, 14, 196610, 1245184, 15, 262146, 1245184, 16, 327682, 1245184, 17, 393218, 1245184, 18, 458754, 1245184, 19, 524290, 1245184, 20, 131075, 1310720, 14, 196611, 1310720, 15, 262147, 1310720, 16, 327683, 1310720, 17, 393219, 1310720, 18, 458755, 1310720, 19, 524291, 1310720, 20, 65540, 1376256, 13, 131076, 1376256, 14, 196612, 1376256, 15, 262148, 1376256, 16, 327684, 1376256, 17, 393220, 1376256, 18, 458756, 1376256, 19, 524292, 1376256, 20, 65541, 1441792, 13, 131077, 1441792, 14, 196613, 1441792, 15, 262149, 1441792, 16, 327685, 1441792, 17, 393221, 1441792, 18, 458757, 1441792, 19, 524293, 1441792, 20, 6, 1441792, 13, 65542, 1441792, 14, 131078, 1507328, 14, 196614, 1507328, 15, 262150, 1507328, 16, 327686, 1507328, 17, 393222, 1507328, 18, 458758, 1507328, 19, 524294, 1507328, 20, 7, 1441792, 14, 65543, 1572864, 13, 131079, 1572864, 14, 196615, 1572864, 15, 262151, 1572864, 16, 327687, 1572864, 17, 393223, 1572864, 18, 458759, 1572864, 19, 524295, 1572864, 20)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uk0vx"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7gxt4"]
 texture = ExtResource("11_7cdgk")
 0:0/0 = 0
 1:0/0 = 0
@@ -11281,7 +11281,7 @@ texture = ExtResource("11_7cdgk")
 
 [sub_resource type="TileSet" id="TileSet_8dxpy"]
 physics_layer_0/collision_layer = 2
-sources/0 = SubResource("TileSetAtlasSource_uk0vx")
+sources/0 = SubResource("TileSetAtlasSource_7gxt4")
 pattern_0 = SubResource("TileMapPattern_lots7")
 pattern_1 = SubResource("TileMapPattern_cp20w")
 
@@ -11505,9 +11505,11 @@ position = Vector2(-137, 48)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(142, -46)
-zoom = Vector2(2.75, 2.75)
+zoom = Vector2(2.2, 2.2)
 limit_left = -222
+limit_top = -537
 limit_right = 3300
+limit_bottom = 128
 editor_draw_limits = true
 
 [node name="tilemaps" type="Node" parent="."]
