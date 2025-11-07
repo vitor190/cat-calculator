@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://c6k1amblo5q7n"]
+[gd_scene load_steps=58 format=3 uid="uid://c6k1amblo5q7n"]
 
 [ext_resource type="Script" uid="uid://bddcsacujm2cb" path="res://Cenas/main.gd" id="1_qns0q"]
 [ext_resource type="Texture2D" uid="uid://brawm65irfy0j" path="res://assets e sprites/floresta/Assets/Tiles.png" id="1_x3hk2"]
@@ -25,6 +25,9 @@
 [ext_resource type="Shader" uid="uid://dtba7m6nhu2dt" path="res://Cenas/shaders/transition.gdshader" id="23_do340"]
 [ext_resource type="Script" uid="uid://dw22xs45h0t8o" path="res://Cenas/transition.gd" id="23_lcw4w"]
 [ext_resource type="Script" uid="uid://vj5j7mq1hrga" path="res://Cenas/color_rect.gd" id="25_q8etu"]
+[ext_resource type="Texture2D" uid="uid://dkrfqs6o4anxu" path="res://assets e sprites/itens/1 - Grassland/Grassland_entities (16 x 16).png" id="26_q8etu"]
+[ext_resource type="Script" uid="uid://b2dbe8aobyrt2" path="res://Cenas/warning_sign.gd" id="27_snoq5"]
+[ext_resource type="Texture2D" uid="uid://w4ka72dvpa07" path="res://assets e sprites/itens/Mini UI/Speech_Emotes (16 x 16).png" id="28_5pwku"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lcw4w"]
 texture = ExtResource("3_ruij7")
@@ -6457,6 +6460,9 @@ shader_parameter/threshold = 0.0
 shader_parameter/line_color_a = Color(0.881712, 0.482543, 0, 1)
 shader_parameter/line_color_b = Color(0, 0, 0, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_snoq5"]
+size = Vector2(33, 20)
+
 [node name="main" type="Node2D"]
 script = ExtResource("1_qns0q")
 
@@ -6685,3 +6691,31 @@ mouse_filter = 2
 color = Color(0.0338533, 0.0338533, 0.0338533, 1)
 script = ExtResource("25_q8etu")
 metadata/_edit_use_anchors_ = true
+
+[node name="placa" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="placa"]
+position = Vector2(77, 50)
+scale = Vector2(1.3125, 1.3125)
+texture = ExtResource("26_q8etu")
+region_enabled = true
+region_rect = Rect2(48, 80, 16, 16)
+
+[node name="warning_sign" type="Node2D" parent="."]
+position = Vector2(65, 35)
+script = ExtResource("27_snoq5")
+
+[node name="texture" type="Sprite2D" parent="warning_sign"]
+visible = false
+position = Vector2(12, -3)
+texture = ExtResource("28_5pwku")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="area_sign" type="Area2D" parent="warning_sign"]
+position = Vector2(-65, -35)
+collision_layer = 8
+
+[node name="collision" type="CollisionShape2D" parent="warning_sign/area_sign"]
+position = Vector2(77.5, 49)
+shape = SubResource("RectangleShape2D_snoq5")

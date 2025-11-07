@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkanulft1cq7g"
-path="res://.godot/imported/Tileset Base.png-3e6a0b508fca8e6e179077970d33ce30.ctex"
+uid="uid://urfn66d8fsjp"
+path="res://.godot/imported/Dialog_Box(16 x 16) (1).png-fbb980b0b5d3932179c732509bc12bb2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets e sprites/deserto/Foozle_2DT0007_Cave_and_Desert_Tileset_Pixel_Art/Foozle_2DT0007_Cave_and_Desert_Tileset_Pixel_Art/Base Tileset/PNG/Tileset Base.png"
-dest_files=["res://.godot/imported/Tileset Base.png-3e6a0b508fca8e6e179077970d33ce30.ctex"]
+source_file="res://assets e sprites/itens/Dialog_Box(16 x 16) (1).png"
+dest_files=["res://.godot/imported/Dialog_Box(16 x 16) (1).png-fbb980b0b5d3932179c732509bc12bb2.ctex"]
 
 [params]
 
