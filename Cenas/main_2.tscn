@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://qfwnw0asek7c"]
+[gd_scene load_steps=54 format=3 uid="uid://qfwnw0asek7c"]
 
 [ext_resource type="Script" uid="uid://do8oooihmjwh1" path="res://Cenas/main_2.gd" id="1_2yk4x"]
 [ext_resource type="AudioStream" uid="uid://b6vb8v5crc8ky" path="res://assets e sprites/song/a-caverna-de-cristal-177055.mp3" id="2_7cdgk"]
@@ -28,6 +28,9 @@
 [ext_resource type="AudioStream" uid="uid://hr28gfhk7ujv" path="res://assets e sprites/song/sound-effect-system-error-sound-117733.mp3" id="26_8lhgy"]
 [ext_resource type="AudioStream" uid="uid://y88akcfdq6a5" path="res://assets e sprites/song/level-win-6416.mp3" id="27_bq2bk"]
 [ext_resource type="Script" uid="uid://bl25sr46axx3p" path="res://Cenas/quiz_manager2.gd" id="28_7gxt4"]
+[ext_resource type="Texture2D" uid="uid://dkrfqs6o4anxu" path="res://assets e sprites/itens/1 - Grassland/Grassland_entities (16 x 16).png" id="29_bq2bk"]
+[ext_resource type="Script" uid="uid://bo0rirgrqc1ot" path="res://Cenas/warning_sign_2.gd" id="30_v5mki"]
+[ext_resource type="Texture2D" uid="uid://w4ka72dvpa07" path="res://assets e sprites/itens/Mini UI/Speech_Emotes (16 x 16).png" id="31_76si7"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_7cdgk"]
 tile_data = PackedInt32Array(0, 3080192, 3, 1, 3145728, 3, 2, 3276800, 3, 3, 3342336, 3, 4, 3407872, 3, 5, 3473408, 3, 6, 3538944, 3, 7, 3670016, 3, 8, 3735552, 3)
@@ -11328,6 +11331,9 @@ height = 152.0
 radius = 24.0
 height = 66.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mqvih"]
+size = Vector2(33, 21)
+
 [node name="main2" type="Node2D"]
 script = ExtResource("1_2yk4x")
 
@@ -11687,3 +11693,31 @@ max_distance = 4096.0
 
 [node name="quiz_manager2" type="Node" parent="."]
 script = ExtResource("28_7gxt4")
+
+[node name="placa" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="placa"]
+position = Vector2(-16, 54)
+scale = Vector2(1.3125, 1.3125)
+texture = ExtResource("29_bq2bk")
+region_enabled = true
+region_rect = Rect2(48, 80, 16, 16)
+
+[node name="warning_sign2" type="Node2D" parent="."]
+position = Vector2(65, 35)
+script = ExtResource("30_v5mki")
+
+[node name="texture" type="Sprite2D" parent="warning_sign2"]
+visible = false
+position = Vector2(-82, -1)
+texture = ExtResource("31_76si7")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="area_sign" type="Area2D" parent="warning_sign2"]
+position = Vector2(-65, -35)
+collision_layer = 8
+
+[node name="collision" type="CollisionShape2D" parent="warning_sign2/area_sign"]
+position = Vector2(-15, 54)
+shape = SubResource("RectangleShape2D_mqvih")

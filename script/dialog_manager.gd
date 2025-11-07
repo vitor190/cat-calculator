@@ -12,7 +12,7 @@ var is_message_active := false
 var can_advance_message := false
 
 # Ajuste da altura da caixa de diálogo
-const DIALOG_OFFSET := Vector2(0, -65)
+const DIALOG_OFFSET := Vector2(-170, -47)
 
 func start_message(position: Vector2, lines: Array[String]):
 	if is_message_active:

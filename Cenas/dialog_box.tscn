@@ -5,8 +5,8 @@
 [ext_resource type="FontFile" uid="uid://bysfhkg8b4c10" path="res://assets e sprites/fonts/Pixellari.ttf" id="2_31rfb"]
 
 [node name="dialog_box" type="MarginContainer"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 24.0
+offset_bottom = 21.0
 script = ExtResource("1_d73vq")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
@@ -29,6 +29,7 @@ theme_override_constants/margin_bottom = 4
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_31rfb")
+theme_override_font_sizes/font_size = 10
 horizontal_alignment = 1
 vertical_alignment = 1
 

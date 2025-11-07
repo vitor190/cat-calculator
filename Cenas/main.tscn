@@ -6695,7 +6695,7 @@ metadata/_edit_use_anchors_ = true
 [node name="placa" type="Node" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="placa"]
-position = Vector2(77, 50)
+position = Vector2(-11, 51)
 scale = Vector2(1.3125, 1.3125)
 texture = ExtResource("26_q8etu")
 region_enabled = true
@@ -6707,7 +6707,7 @@ script = ExtResource("27_snoq5")
 
 [node name="texture" type="Sprite2D" parent="warning_sign"]
 visible = false
-position = Vector2(12, -3)
+position = Vector2(-76, -3)
 texture = ExtResource("28_5pwku")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
@@ -6717,5 +6717,5 @@ position = Vector2(-65, -35)
 collision_layer = 8
 
 [node name="collision" type="CollisionShape2D" parent="warning_sign/area_sign"]
-position = Vector2(77.5, 49)
+position = Vector2(-11, 51)
 shape = SubResource("RectangleShape2D_snoq5")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://csvbgmuqfdy1e"]
+[gd_scene load_steps=70 format=3 uid="uid://csvbgmuqfdy1e"]
 
 [ext_resource type="Script" uid="uid://tqy5tdsl7800" path="res://Cenas/main_3.gd" id="1_cyqk2"]
 [ext_resource type="AudioStream" uid="uid://c7s6xeqx1dhu7" path="res://assets e sprites/song/magic-forest-318165.mp3" id="2_1tvp3"]
@@ -28,6 +28,9 @@
 [ext_resource type="Shader" uid="uid://dtba7m6nhu2dt" path="res://Cenas/shaders/transition.gdshader" id="24_tklx2"]
 [ext_resource type="Script" uid="uid://vj5j7mq1hrga" path="res://Cenas/color_rect.gd" id="25_pv7ah"]
 [ext_resource type="Script" uid="uid://1ln6ofaoqntw" path="res://Cenas/quiz_manager_3.gd" id="27_a2ulf"]
+[ext_resource type="Texture2D" uid="uid://dkrfqs6o4anxu" path="res://assets e sprites/itens/1 - Grassland/Grassland_entities (16 x 16).png" id="29_dohvv"]
+[ext_resource type="Script" uid="uid://bj7l1wuvyw06b" path="res://Cenas/warning_sign_3.gd" id="30_7jh0s"]
+[ext_resource type="Texture2D" uid="uid://w4ka72dvpa07" path="res://assets e sprites/itens/Mini UI/Speech_Emotes (16 x 16).png" id="31_rr68k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_srmv0"]
 atlas = ExtResource("3_8ju1i")
@@ -6361,6 +6364,9 @@ shader_parameter/threshold = 0.0
 shader_parameter/line_color_a = Color(0.881712, 0.482543, 0, 1)
 shader_parameter/line_color_b = Color(0, 0, 0, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sns7b"]
+size = Vector2(33, 21)
+
 [node name="main3" type="Node2D"]
 script = ExtResource("1_cyqk2")
 
@@ -7337,5 +7343,33 @@ max_distance = 4096.0
 
 [node name="quiz_manager3" type="Node" parent="."]
 script = ExtResource("27_a2ulf")
+
+[node name="placa" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="placa"]
+position = Vector2(-16, 51)
+scale = Vector2(1.3125, 1.3125)
+texture = ExtResource("29_dohvv")
+region_enabled = true
+region_rect = Rect2(48, 80, 16, 16)
+
+[node name="warning_sign3" type="Node2D" parent="."]
+position = Vector2(65, 35)
+script = ExtResource("30_7jh0s")
+
+[node name="texture" type="Sprite2D" parent="warning_sign3"]
+visible = false
+position = Vector2(-82, -1)
+texture = ExtResource("31_rr68k")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="area_sign" type="Area2D" parent="warning_sign3"]
+position = Vector2(-65, -35)
+collision_layer = 8
+
+[node name="collision" type="CollisionShape2D" parent="warning_sign3/area_sign"]
+position = Vector2(-15, 51)
+shape = SubResource("RectangleShape2D_sns7b")
 
 [connection signal="body_entered" from="tilemaps/Area2D" to="tilemaps/Area2D" method="_on_body_entered"]
