@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkgny7eyr12wm"]
+
+[ext_resource type="Theme" uid="uid://bu2u1bk8jm4fa" path="res://Resources/CollisionShapes/new_theme.tres" id="1_hdmo1"]
+[ext_resource type="Script" uid="uid://doa0u5pnkr7ck" path="res://pause_menu.gd" id="1_nwcfo"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_nwcfo"]
+action = &"ui_cancel"
+
+[sub_resource type="Shortcut" id="Shortcut_05uyy"]
+events = [SubResource("InputEventAction_nwcfo")]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nwcfo"]
+
+[node name="pause_menu" type="CanvasLayer"]
+process_mode = 3
+visible = false
+script = ExtResource("1_nwcfo")
+
+[node name="bg_overlay" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.235294)
+
+[node name="meu_holder" type="VBoxContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -33.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="resume_btn" type="Button" parent="meu_holder"]
+layout_mode = 2
+theme = ExtResource("1_hdmo1")
+theme_override_font_sizes/font_size = 36
+shortcut = SubResource("Shortcut_05uyy")
+text = "RESUME"
+
+[node name="HSeparator" type="HSeparator" parent="meu_holder"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_nwcfo")
+
+[node name="quit_btn" type="Button" parent="meu_holder"]
+layout_mode = 2
+theme = ExtResource("1_hdmo1")
+text = "QUIT GAME"
+
+[connection signal="pressed" from="meu_holder/resume_btn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="meu_holder/quit_btn" to="." method="_on_quit_btn_pressed"]

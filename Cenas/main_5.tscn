@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://332xp7anived"]
+[gd_scene load_steps=57 format=3 uid="uid://332xp7anived"]
 
 [ext_resource type="AudioStream" uid="uid://c7s6xeqx1dhu7" path="res://assets e sprites/song/magic-forest-318165.mp3" id="1_7b2vc"]
 [ext_resource type="Texture2D" uid="uid://deptnu30qbag1" path="res://assets e sprites/Background/Background.png" id="2_36g7t"]
@@ -26,6 +26,7 @@
 [ext_resource type="Script" uid="uid://vj5j7mq1hrga" path="res://Cenas/color_rect.gd" id="24_xxj40"]
 [ext_resource type="Texture2D" uid="uid://dkrfqs6o4anxu" path="res://assets e sprites/itens/1 - Grassland/Grassland_entities (16 x 16).png" id="25_cme3j"]
 [ext_resource type="Texture2D" uid="uid://w4ka72dvpa07" path="res://assets e sprites/itens/Mini UI/Speech_Emotes (16 x 16).png" id="26_2p5hd"]
+[ext_resource type="PackedScene" uid="uid://bkgny7eyr12wm" path="res://pause_menu.tscn" id="27_36g7t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pqkic"]
 texture = ExtResource("3_h67cu")
@@ -6715,3 +6716,5 @@ collision_layer = 8
 [node name="collision" type="CollisionShape2D" parent="warning_sign5/area_sign"]
 position = Vector2(-11, 51)
 shape = SubResource("RectangleShape2D_snoq5")
+
+[node name="pause_menu" parent="." instance=ExtResource("27_36g7t")]

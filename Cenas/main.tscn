@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://c6k1amblo5q7n"]
+[gd_scene load_steps=59 format=3 uid="uid://c6k1amblo5q7n"]
 
 [ext_resource type="Script" uid="uid://bddcsacujm2cb" path="res://Cenas/main.gd" id="1_qns0q"]
 [ext_resource type="Texture2D" uid="uid://brawm65irfy0j" path="res://assets e sprites/floresta/Assets/Tiles.png" id="1_x3hk2"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://dkrfqs6o4anxu" path="res://assets e sprites/itens/1 - Grassland/Grassland_entities (16 x 16).png" id="26_q8etu"]
 [ext_resource type="Script" uid="uid://b2dbe8aobyrt2" path="res://Cenas/warning_sign.gd" id="27_snoq5"]
 [ext_resource type="Texture2D" uid="uid://w4ka72dvpa07" path="res://assets e sprites/itens/Mini UI/Speech_Emotes (16 x 16).png" id="28_5pwku"]
+[ext_resource type="PackedScene" uid="uid://bkgny7eyr12wm" path="res://pause_menu.tscn" id="29_5pwku"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_snoq5"]
 texture = ExtResource("3_ruij7")
@@ -6719,3 +6720,5 @@ collision_layer = 8
 [node name="collision" type="CollisionShape2D" parent="warning_sign/area_sign"]
 position = Vector2(-11, 51)
 shape = SubResource("RectangleShape2D_snoq5")
+
+[node name="pause_menu" parent="." instance=ExtResource("29_5pwku")]

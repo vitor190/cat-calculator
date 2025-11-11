@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://csvbgmuqfdy1e"]
+[gd_scene load_steps=71 format=3 uid="uid://csvbgmuqfdy1e"]
 
 [ext_resource type="Script" uid="uid://tqy5tdsl7800" path="res://Cenas/main_3.gd" id="1_cyqk2"]
 [ext_resource type="AudioStream" uid="uid://c7s6xeqx1dhu7" path="res://assets e sprites/song/magic-forest-318165.mp3" id="2_1tvp3"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://dkrfqs6o4anxu" path="res://assets e sprites/itens/1 - Grassland/Grassland_entities (16 x 16).png" id="29_dohvv"]
 [ext_resource type="Script" uid="uid://bj7l1wuvyw06b" path="res://Cenas/warning_sign_3.gd" id="30_7jh0s"]
 [ext_resource type="Texture2D" uid="uid://w4ka72dvpa07" path="res://assets e sprites/itens/Mini UI/Speech_Emotes (16 x 16).png" id="31_rr68k"]
+[ext_resource type="PackedScene" uid="uid://bkgny7eyr12wm" path="res://pause_menu.tscn" id="32_7jh0s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_srmv0"]
 atlas = ExtResource("3_8ju1i")
@@ -6373,6 +6374,7 @@ script = ExtResource("1_cyqk2")
 [node name="musica_fase3" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_1tvp3")
 volume_db = -10.71
+max_distance = 2950.0
 parameters/looping = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -7371,5 +7373,7 @@ collision_layer = 8
 [node name="collision" type="CollisionShape2D" parent="warning_sign3/area_sign"]
 position = Vector2(-15, 51)
 shape = SubResource("RectangleShape2D_sns7b")
+
+[node name="pause_menu" parent="." instance=ExtResource("32_7jh0s")]
 
 [connection signal="body_entered" from="tilemaps/Area2D" to="tilemaps/Area2D" method="_on_body_entered"]

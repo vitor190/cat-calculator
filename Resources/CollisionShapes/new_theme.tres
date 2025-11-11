@@ -1,0 +1,23 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bu2u1bk8jm4fa"]
+
+[ext_resource type="FontFile" uid="uid://bysfhkg8b4c10" path="res://assets e sprites/fonts/Pixellari.ttf" id="1_83k1b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ljip"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5gj5r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5nnu1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u6exw"]
+
+[resource]
+Button/colors/font_focus_color = Color(1, 1, 0, 1)
+Button/colors/font_hover_color = Color(1, 1, 0, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 0, 1)
+Button/colors/font_pressed_color = Color(0.881712, 0.482543, 0, 1)
+Button/font_sizes/font_size = 36
+Button/fonts/font = ExtResource("1_83k1b")
+Button/styles/focus = SubResource("StyleBoxEmpty_4ljip")
+Button/styles/hover = SubResource("StyleBoxEmpty_5gj5r")
+Button/styles/normal = SubResource("StyleBoxEmpty_5nnu1")
+Button/styles/pressed = SubResource("StyleBoxEmpty_u6exw")

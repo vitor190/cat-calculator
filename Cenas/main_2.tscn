@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://qfwnw0asek7c"]
+[gd_scene load_steps=55 format=3 uid="uid://qfwnw0asek7c"]
 
 [ext_resource type="Script" uid="uid://do8oooihmjwh1" path="res://Cenas/main_2.gd" id="1_2yk4x"]
 [ext_resource type="AudioStream" uid="uid://b6vb8v5crc8ky" path="res://assets e sprites/song/a-caverna-de-cristal-177055.mp3" id="2_7cdgk"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://dkrfqs6o4anxu" path="res://assets e sprites/itens/1 - Grassland/Grassland_entities (16 x 16).png" id="29_bq2bk"]
 [ext_resource type="Script" uid="uid://bo0rirgrqc1ot" path="res://Cenas/warning_sign_2.gd" id="30_v5mki"]
 [ext_resource type="Texture2D" uid="uid://w4ka72dvpa07" path="res://assets e sprites/itens/Mini UI/Speech_Emotes (16 x 16).png" id="31_76si7"]
+[ext_resource type="PackedScene" uid="uid://bkgny7eyr12wm" path="res://pause_menu.tscn" id="32_v5mki"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_7cdgk"]
 tile_data = PackedInt32Array(0, 3080192, 3, 1, 3145728, 3, 2, 3276800, 3, 3, 3342336, 3, 4, 3407872, 3, 5, 3473408, 3, 6, 3538944, 3, 7, 3670016, 3, 8, 3735552, 3)
@@ -11339,6 +11340,7 @@ script = ExtResource("1_2yk4x")
 
 [node name="musica_fase2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_7cdgk")
+max_distance = 2950.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -11721,3 +11723,5 @@ collision_layer = 8
 [node name="collision" type="CollisionShape2D" parent="warning_sign2/area_sign"]
 position = Vector2(-15, 54)
 shape = SubResource("RectangleShape2D_mqvih")
+
+[node name="pause_menu" parent="." instance=ExtResource("32_v5mki")]

@@ -1,11 +1,12 @@
 extends Control
 
 @onready var musica_fundo = $MarginContainer/musica_de_fundo
+@onready var start_btn: Button = $MarginContainer/HBoxContainer/VBoxContainer/start_btn
 
 	
 func _ready() -> void:
 	musica_fundo.play()
-	
+	start_btn.grab_focus()
 
 func _on_start_btn_pressed() -> void:
 	musica_fundo.stop()

@@ -7,7 +7,7 @@ const lines: Array[String] = [
 	
 	"Parabéns por completar a fase 2...",
 	"Sua missão nessa fase é coletar todos os patos espalhados pelo cenário...",
-	"fazer a contagem de quantos foi coletados, e assim, concluir o desafio...",
+	"fazer a contagem de quantos foram coletados, e assim, concluir o desafio...",
 ]
 
 func _unhandled_input(event):
