@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cqpset3h35vlp"
+path="res://.godot/imported/final-fight-320156.mp3-722e6562dd7cd4b80a8f6e6848bee0f0.mp3str"
+
+[deps]
+
+source_file="res://assets e sprites/song/final-fight-320156.mp3"
+dest_files=["res://.godot/imported/final-fight-320156.mp3-722e6562dd7cd4b80a8f6e6848bee0f0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

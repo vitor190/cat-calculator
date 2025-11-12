@@ -11635,9 +11635,9 @@ theme = ExtResource("24_7gxt4")
 
 [node name="Balao2" type="Button" parent="UI_Baixo"]
 visible = false
-offset_left = 2695.0
+offset_left = 2685.0
 offset_top = -36.0
-offset_right = 2737.0
+offset_right = 2727.0
 offset_bottom = 4.0
 theme = ExtResource("24_7gxt4")
 

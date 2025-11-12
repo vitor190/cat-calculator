@@ -1,4 +1,5 @@
 extends Area2D
+
 class_name Portao
 
 @onready var anim = $AnimatedSprite2D
