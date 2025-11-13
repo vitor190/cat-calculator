@@ -87,10 +87,6 @@ func _mostrar_equacao_divisao():
 			botoes[i].disconnect("pressed", Callable(self, "_verificar_resposta"))
 		botoes[i].connect("pressed", Callable(self, "_verificar_resposta").bind(int(botoes[i].text)))
 
-
-# ------------------------------------------------------------
-# VERIFICA A RESPOSTA ESCOLHIDA
-# ------------------------------------------------------------
 func _verificar_resposta(valor: int):
 	if valor == resposta_correta:
 		som_acerto.play()

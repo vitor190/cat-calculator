@@ -42,19 +42,19 @@ region = Rect2(560, 0, 80, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8tubf"]
 atlas = ExtResource("2_e2nbm")
-region = Rect2(0, 0, 80, 64)
+region = Rect2(240, 0, 80, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a4yfx"]
 atlas = ExtResource("2_e2nbm")
-region = Rect2(80, 0, 80, 64)
+region = Rect2(160, 0, 80, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_alogn"]
 atlas = ExtResource("2_e2nbm")
-region = Rect2(160, 0, 80, 64)
+region = Rect2(80, 0, 80, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4j5ex"]
 atlas = ExtResource("2_e2nbm")
-region = Rect2(240, 0, 80, 64)
+region = Rect2(0, 0, 80, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5p0qj"]
 atlas = ExtResource("1_pmvhq")
@@ -177,7 +177,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_4j5ex")
 }],
 "loop": true,
-"name": &"cat_hit",
+"name": &"cat_dano",
 "speed": 5.0
 }, {
 "frames": [{
@@ -259,7 +259,7 @@ script = ExtResource("1_e2nbm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ruciq")
-animation = &"cat_idle"
+animation = &"cat_dano"
 autoplay = "cat_idle"
 flip_h = true
 
