@@ -11,6 +11,11 @@ extends Node
 @onready var hp_boss = $"../boss/health_bar_boss"
 
 @onready var ui_boss = $"../UI_boss"
+@onready var victory_label = $"../UI_boss/VictoryLabel"
+
+@onready var som_acerto = $"../UI_boss/UI2/SomAcerto"
+@onready var som_erro = $"../UI_boss/UI2/SomErro"
+@onready var som_fase_concluida = $"../UI_boss/UI2/SomFaseConcluida"
 
 
 # --------------------------------------------------
@@ -32,18 +37,9 @@ var anims_boss := [
 	"sem_vida_boss"
 ]
 
-
-# --------------------------------------------------
-# ÍNDICE ATUAL DE VIDA
-# (0 = cheio, último índice = morto)
-# --------------------------------------------------
 var idx_vida_player := 0
 var idx_vida_boss := 0
 
-
-# --------------------------------------------------
-# CONTROLE DAS UIs
-# --------------------------------------------------
 var uis = []
 var ui_atual_index := 0
 
@@ -180,7 +176,9 @@ func _verificar_resposta(valor):
 # --------------------------------------------------
 func _acertou():
 	print("✅ Acertou!")
-
+	
+	som_acerto.play()
+	
 	# Boss perde 1 etapa de vida
 	if idx_vida_boss < anims_boss.size() - 1:
 		idx_vida_boss += 1
@@ -202,6 +200,8 @@ func _acertou():
 # --------------------------------------------------
 func _errou():
 	print("❌ Errou!")
+	
+	som_erro.play()
 
 	if boss.has_node("AnimatedSprite2D"):
 		var anim_boss = boss.get_node("AnimatedSprite2D")
@@ -242,10 +242,22 @@ func _atualizar_vida_boss():
 # --------------------------------------------------
 func _boss_morre():
 	print("🐺 Boss morreu!")
+	
 	boss.queue_free()
+	
+	hp_player.visible = false
+	
+	for ui in uis:
+		ui.visible = false
+		
+	som_fase_concluida.play()
+		
+	victory_label.visible = true
+	victory_label.text = "VOCÊ DERROTOU O GUARDIÃO DO LIVRO!"
+		
 # --------------------------------------------------
 # MORTE DO PLAYER
 # --------------------------------------------------
 func _player_morre():
 	print("💀 Player morreu!")
-	player.queue_free()
+	get_tree().change_scene_to_file("res://Cenas/game_over.tscn")

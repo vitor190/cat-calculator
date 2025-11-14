@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b8x4hs4m036lf"]
 
 [ext_resource type="Script" uid="uid://brthap5qg03j0" path="res://Cenas/goal.gd" id="1_lupch"]
-[ext_resource type="Texture2D" uid="uid://dcbv5y3bdx5pd" path="res://assets e sprites/itens/Mini UI/Timer_Coin_Numbers_Drop-shadowed (8 x 8).png" id="1_pp0cq"]
+[ext_resource type="Texture2D" uid="uid://mkvq4elp74tk" path="res://assets e sprites/itens/Shikashi's Fantasy Icons Pack v2/BG 11.png" id="2_lupch"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lupch"]
 radius = 5.0
@@ -46,12 +46,13 @@ _data = {
 [node name="goal" type="Area2D"]
 collision_layer = 16
 script = ExtResource("1_lupch")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_pp0cq")
+position = Vector2(0, -2.98023e-08)
+scale = Vector2(0.375, 0.339286)
+texture = ExtResource("2_lupch")
 region_enabled = true
-region_rect = Rect2(0, 8, 8, 8)
+region_rect = Rect2(196, 416, 24, 28)
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_lupch")

@@ -1,0 +1,142 @@
+[gd_scene load_steps=11 format=3 uid="uid://1bhay1500dd"]
+
+[ext_resource type="Script" uid="uid://dfos3lud4odt3" path="res://Cenas/victory.gd" id="1_h5uoi"]
+[ext_resource type="AudioStream" uid="uid://ctexv0c58bv6e" path="res://assets e sprites/song/determination-to-win-115789.mp3" id="2_3iy17"]
+[ext_resource type="Theme" uid="uid://x1xvj6f5vent" path="res://Resources/CollisionShapes/num_flutuante.tres" id="3_5oa64"]
+[ext_resource type="FontFile" uid="uid://bysfhkg8b4c10" path="res://assets e sprites/fonts/Pixellari.ttf" id="4_te4dl"]
+[ext_resource type="Theme" uid="uid://bu2u1bk8jm4fa" path="res://Resources/CollisionShapes/new_theme.tres" id="5_grss8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0j7p8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ps750"]
+
+[sub_resource type="Animation" id="Animation_o6hi5"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.503843),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.503843, 0.801735),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qmc8d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x26pc"]
+_data = {
+&"RESET": SubResource("Animation_qmc8d"),
+&"fade_in": SubResource("Animation_o6hi5")
+}
+
+[node name="VICTORY" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h5uoi")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_3iy17")
+volume_db = -20.371
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.0
+offset_top = -83.5
+offset_right = 190.0
+offset_bottom = 83.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_5oa64")
+theme_override_fonts/font = ExtResource("4_te4dl")
+theme_override_font_sizes/font_size = 70
+text = "YOU WIN"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0j7p8")
+
+[node name="Restart_btn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_grss8")
+text = "MENU"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ps750")
+
+[node name="Quit_btn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_grss8")
+text = "QUIT GAME"
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_x26pc")
+}
+autoplay = "fade_in"
+
+[connection signal="pressed" from="VBoxContainer/Restart_btn" to="." method="_on_restart_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit_btn" to="." method="_on_quit_btn_pressed"]

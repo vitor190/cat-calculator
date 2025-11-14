@@ -98,8 +98,6 @@ func _verificar_resposta(valor: int):
 		if portao and portao.has_method("abrir_portao"):
 			portao.abrir_portao()
 
-		# Música de fundo continua tocando (não paramos ela)
-		som_fase_concluida.play()
 	else:
 		som_erro.play()
 		label_equacao.text = "❌ Errado! Tente novamente."

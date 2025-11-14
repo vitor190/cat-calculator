@@ -259,7 +259,7 @@ script = ExtResource("1_e2nbm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ruciq")
-animation = &"cat_dano"
+animation = &"cat_attack"
 autoplay = "cat_idle"
 flip_h = true
 
