@@ -254,6 +254,10 @@ func _boss_morre():
 		
 	victory_label.visible = true
 	victory_label.text = "VOCÊ DERROTOU O GUARDIÃO DO LIVRO!"
+	
+	await get_tree().create_timer(3.0).timeout
+	
+	get_tree().change_scene_to_file("res://Cenas/victory.tscn")
 		
 # --------------------------------------------------
 # MORTE DO PLAYER
@@ -261,3 +265,4 @@ func _boss_morre():
 func _player_morre():
 	print("💀 Player morreu!")
 	get_tree().change_scene_to_file("res://Cenas/game_over.tscn")
+	

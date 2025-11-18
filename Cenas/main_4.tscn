@@ -13980,13 +13980,16 @@ theme = ExtResource("17_guawu")
 
 [node name="SomAcerto" type="AudioStreamPlayer2D" parent="UI_1"]
 stream = ExtResource("18_tsvfn")
+volume_db = 10.0
 
 [node name="SomErro" type="AudioStreamPlayer2D" parent="UI_1"]
 stream = ExtResource("19_lygwl")
+volume_db = 10.0
 
 [node name="SomFaseConcluida" type="AudioStreamPlayer2D" parent="UI_1"]
 position = Vector2(1, 0)
 stream = ExtResource("20_cdtol")
+volume_db = 10.0
 
 [node name="UI_2" type="Node2D" parent="."]
 position = Vector2(989, 13)

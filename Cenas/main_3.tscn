@@ -6373,7 +6373,6 @@ script = ExtResource("1_cyqk2")
 
 [node name="musica_fase3" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_1tvp3")
-volume_db = -10.71
 max_distance = 2950.0
 parameters/looping = true
 
@@ -7332,15 +7331,18 @@ theme = ExtResource("21_bmq2k")
 
 [node name="SomAcerto" type="AudioStreamPlayer2D" parent="UI"]
 stream = ExtResource("22_66qf2")
+volume_db = 10.0
 max_distance = 4096.0
 
 [node name="SomErro" type="AudioStreamPlayer2D" parent="UI"]
 stream = ExtResource("23_1tvp3")
+volume_db = 10.0
 max_distance = 4096.0
 
 [node name="SomFaseConcluida" type="AudioStreamPlayer2D" parent="UI"]
 position = Vector2(1, 0)
 stream = ExtResource("24_a2ulf")
+volume_db = 10.0
 max_distance = 4096.0
 
 [node name="quiz_manager3" type="Node" parent="."]

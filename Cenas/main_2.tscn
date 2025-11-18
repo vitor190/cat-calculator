@@ -11340,6 +11340,7 @@ script = ExtResource("1_2yk4x")
 
 [node name="musica_fase2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_7cdgk")
+volume_db = 10.722
 max_distance = 2950.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -11681,16 +11682,19 @@ theme = ExtResource("24_7gxt4")
 [node name="SomAcerto" type="AudioStreamPlayer2D" parent="UI_Cima"]
 position = Vector2(1, 0)
 stream = ExtResource("25_vkrr2")
+volume_db = 10.0
 max_distance = 4096.0
 
 [node name="SomErro" type="AudioStreamPlayer2D" parent="UI_Cima"]
 position = Vector2(1, 0)
 stream = ExtResource("26_8lhgy")
+volume_db = 10.0
 max_distance = 4096.0
 
 [node name="SomFaseConcluida" type="AudioStreamPlayer2D" parent="UI_Cima"]
 position = Vector2(1, 0)
 stream = ExtResource("27_bq2bk")
+volume_db = 10.0
 max_distance = 4096.0
 
 [node name="quiz_manager2" type="Node" parent="."]

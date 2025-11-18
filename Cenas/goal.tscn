@@ -48,8 +48,8 @@ collision_layer = 16
 script = ExtResource("1_lupch")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -2.98023e-08)
-scale = Vector2(0.375, 0.339286)
+position = Vector2(1.19209e-07, -1.19209e-07)
+scale = Vector2(0.479167, 0.455357)
 texture = ExtResource("2_lupch")
 region_enabled = true
 region_rect = Rect2(196, 416, 24, 28)
